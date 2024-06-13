@@ -1,4 +1,5 @@
 #!/bin/bash
+chmod +x init-localstack.sh
 awslocal sqs create-queue --queue-name login-queue
 awslocal sqs send-message --queue-url http://localhost:4566/000000000000/login-queue --message-body '{
     "user_id": "123",
@@ -8,7 +9,7 @@ awslocal sqs send-message --queue-url http://localhost:4566/000000000000/login-q
     "locale": "en-US",
     "app_version": 5,
     "create_date": "2023-06-11"}'
-chmod +x init-localstack.sh
+
 
 
 
